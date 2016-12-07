@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,height=device-height,
+user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<title>append</title>
+<script type="text/javascript" src="jquery.min.js"></script>
+
+<style>
+::-webkit-scrollbar{width:0px;height: 0px}
+body{
+  margin: 0;
+  padding: 0
+}
+.tip{
+  width:96%;height:23%;background:blue;margin:2%;
+  text-align:center;line-height:2em;
+}
+#tips{
+  height:80%;width:100%;background:yellow;overflow:scroll;
+  color:white;font-weight:bold;font-size:3em
+}
+#add{
+  height:10%;width:100%;background:red;position:absolute;bottom:0%;
+  font-size:1em;line-height:3em;text-align:center;color:white
+}
+#container{
+  height:100%;position:fixed;width:100%;
+}
+</style>
+</head>
+<body>
+<div id="container">
+
+
+<div id="tips">
+
+<div class="tip">1
+</div>
+
+<div class="tip">2
+</div>
+
+<div class="tip">3
+</div>
+
+<div class="tip">4
+</div>
+
+
+</div>
+
+<div id="add">
+Add tips
+</div>
+
+</div>
+
+</body>
+<script>
+$('#add').click(function(){
+  var temp = $('#tips').find("div").eq(-1).text();
+  temp++;
+  $('#tips').append("<div class='tip'>"+temp+"</div>");
+});
+</script>
+</html>
